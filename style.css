@@ -1,6 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-h1 {
-  color: lightcoral;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Inconsolata';
+}
+
+#navigation {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navigation .logo {
+  text-decoration: none;
+  padding: 10px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-left: 50px;
+}
+
+#navigation .logo:hover {
+  color: #BFBCCB;
+}
+
+#navigation .link {
+  font-size: 14px;
+  line-height: 40px;
+}
+
+#navigation .link a {
+  text-decoration: none;
+  color: #704C5E;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#navigation .link a:hover {
+  color: #BFBCCB;
+}
+
+#navigation .icon {
+  text-align: right;
+  padding-right: 50px;
+}
+
+#navigation .icon img {
+  width: 20px;
+  padding-left: 10px;
+  -webkit-filter: invert(28%) sepia(46%) saturate(307%) hue-rotate(277deg) brightness(101%) contrast(90%);
+          filter: invert(28%) sepia(46%) saturate(307%) hue-rotate(277deg) brightness(101%) contrast(90%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#navigation .icon img:hover {
+  -webkit-filter: invert(90%) sepia(11%) saturate(226%) hue-rotate(211deg) brightness(83%) contrast(91%);
+          filter: invert(90%) sepia(11%) saturate(226%) hue-rotate(211deg) brightness(83%) contrast(91%);
 }
 /*# sourceMappingURL=style.css.map */
