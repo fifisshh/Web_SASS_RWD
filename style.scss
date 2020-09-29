@@ -23,7 +23,7 @@ $font-family-eng: "Inconsolata";
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 120px;
   align-items: center;
-//   position: fixed;
+  position: fixed;
    /* fix之後寬度會跑掉@@ */
   width: 100%;
   background: #eee;
@@ -70,7 +70,7 @@ $font-family-eng: "Inconsolata";
   height: 100vh;
 //   background-color: #eee;
   background-image: url(https://images.unsplash.com/photo-1541450805268-4822a3a774ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);;
-  filter: invert(87%) sepia(18%) saturate(189%) hue-rotate(330deg) brightness(104%) contrast(90%);
+//   filter: invert(87%) sepia(18%) saturate(189%) hue-rotate(330deg) brightness(104%) contrast(90%);
   background-attachment: fixed;
   overflow: hidden;
   .left {
@@ -179,7 +179,8 @@ footer {
         transition: 0.5s;
         font-size: 24px;
         &:hover {
-          color: $color-sub;
+          color: #eee;
+          color: light
         }
     }
     .link {
@@ -193,7 +194,7 @@ footer {
           transition: 0.5s;
           padding-right: 50px;
           &:hover {
-            color: $color-sub;
+            color: #eee;
           }
         }
     }
@@ -206,6 +207,7 @@ footer {
           padding-left: 10px;
           &:hover {
             filter: invert(90%) sepia(11%) saturate(226%) hue-rotate(211deg) brightness(83%) contrast(91%);
+            color: #eee;
           }
         }
     }
