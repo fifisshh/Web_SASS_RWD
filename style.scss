@@ -4,6 +4,11 @@ $color-sub: #bfbccb;
 $font-size-big: 36px;
 $font-family-eng: "Inconsolata";
 
+// RWD
+$pc: 1025px;
+$tablet: 1024px;
+$mobile: 767px;
+
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +32,21 @@ $font-family-eng: "Inconsolata";
    /* fix之後寬度會跑掉@@ */
   width: 100%;
   background: #eee;
+  z-index: 1;
+  @media screen and (min-width: $pc) {
+    grid-template-areas: "logo link icon";
+  }
+  @media screen and (max-width: $tablet) {
+    grid-template-areas: "logo icon menu";
+  }
+
+  @media screen and (max-width: $mobile){
+    padding: 10px 8px;
+  }
+  
+
   .logo {
+    grid-area: logo;
     text-decoration: none;
     transition: 0.5s;
     font-size: 24px;
@@ -35,8 +54,19 @@ $font-family-eng: "Inconsolata";
       color: $color-sub;
     }
   }
+  #menu {
+    grid-area: menu;
+    @media screen and (min-width: $pc) {
+      display: none;
+    }
+    @media screen and (max-width: $tablet) {
+      display: block;
+      margin-left: auto;
+    }
+  }
 
   .link {
+    grid-area: link;
     // line-height: 40px;
     letter-spacing: 2px;
     padding-left: 2px;
@@ -49,9 +79,13 @@ $font-family-eng: "Inconsolata";
         color: $color-sub;
       }
     }
+    @media screen and (max-width: $tablet){
+      display: none;
+    }
   }
 
   .icon {
+    grid-area: icon;
     text-align: right;
     img {
       filter: invert(28%) sepia(46%) saturate(307%) hue-rotate(277deg) brightness(101%) contrast(90%);
@@ -61,6 +95,13 @@ $font-family-eng: "Inconsolata";
       &:hover {
         filter: invert(90%) sepia(11%) saturate(226%) hue-rotate(211deg) brightness(83%) contrast(91%);
       }
+    }
+    @media screen and (max-width: $mobile){
+    padding: 0 2px;
+    img {
+      padding: 0;
+      width: 22px;
+    }
     }
   }
 }
@@ -72,6 +113,8 @@ $font-family-eng: "Inconsolata";
   background-image: url(https://images.unsplash.com/photo-1541450805268-4822a3a774ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);;
 //   filter: invert(87%) sepia(18%) saturate(189%) hue-rotate(330deg) brightness(104%) contrast(90%);
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
   .left {
       font-size: 36px;
@@ -105,6 +148,11 @@ $font-family-eng: "Inconsolata";
       -webkit-text-stroke: 3px #704c5e;
       -webkit-text-fill-color: transparent;
     //   }
+    @media screen and (max-width: $mobile){
+      font-size: 64px;
+      letter-spacing: 5px;
+      padding-left: 5px;
+    }
     }
     p {
         margin-bottom: 50px;
@@ -133,8 +181,12 @@ $font-family-eng: "Inconsolata";
 
 #portfolio {
     height: 100vh;
+    @media screen and (max-width: $mobile){
+      height: auto;
+      padding-bottom: 50px;
+    }
     text-align: center;
-    background-color: snow;
+    background-color: snow;  
     .p-box {
         width: 700px;
         margin: 0 auto;
@@ -142,6 +194,15 @@ $font-family-eng: "Inconsolata";
         grid-template-columns: 1fr 1fr 1fr; //repeat(3, 1fr)
         // grid-template-rows: repeat(2,335px);
         grid-gap: 0 50px;
+
+        @media screen and (max-width: $tablet){
+
+        }
+        @media screen and (max-width: $mobile){
+          width: 100%;
+          grid-template-columns: repeat(1,1fr);
+          padding: 0 50px;
+        }
     }
     .each-p-box {
         margin-bottom: 20px;
@@ -197,6 +258,9 @@ footer {
             color: #eee;
           }
         }
+        @media screen and (max-width: $mobile){
+          display: none;
+        }
     }
     .icon {
         margin-bottom: 25px;
@@ -214,4 +278,21 @@ footer {
     p {
         font-size: 14px;
     }
+}
+#rightBar {
+  z-index: 9999;
+  width: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 5%;
+  height: auto;
+}
+#rightBar .botn {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
 }
